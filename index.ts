@@ -9,12 +9,12 @@ const webSocketServer = require('websocket').server;
 
 app.use(express.static(path.join(__dirname, 'build')));
 app.use(express.static('public'));
-app.use(cors);
 const myMiddleware: RequestHandler = (req, res, next) => {
 	res.sendFile(path.join(__dirname, 'build', 'index.html'));
 };
 
 app.get('/', myMiddleware);
+app.use(cors);
 
 const server = http.createServer(app);
 server.listen(webSocketsServerPort, () => {
