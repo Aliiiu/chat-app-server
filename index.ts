@@ -4,7 +4,7 @@ import http from 'http';
 import cors from 'cors';
 import path from 'path';
 const app = express();
-const webSocketsServerPort = process.env.PORT || 5000;
+const webSocketsServerPort = process.env.PORT || 3000;
 const webSocketServer = require('websocket').server;
 
 app.use(express.static(path.join(__dirname, 'build')));
